@@ -92,7 +92,6 @@ to whatever works for you, be it vim, vi, subl, code
 
 
 Some examples :
-
 cppcheck Hello-World.cpp
 
 cppcheck factorial.cpp new

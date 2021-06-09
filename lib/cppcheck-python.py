@@ -3,7 +3,7 @@ import sys
 import subprocess
 import filecmp
 
-default_text_editor = "nano" # options : vim, vi, subl, code, nano
+default_text_editor = "vim" # options : vim, vi, subl, code, nano
 
 flag = ""
 if(len(sys.argv) == 3) :
@@ -11,6 +11,7 @@ if(len(sys.argv) == 3) :
 
 path = sys.argv[1]
 path = path[:-4]
+file_name = path
 
 for i in range(len(path)-1, -1, -1) :
     if (path[i] == '/'):
@@ -22,6 +23,7 @@ in_out = home +'/bin/cpp/' + file_name+ '/'
 input_file = in_out + 'input.txt'
 output_file = in_out + 'output.txt'
 result_file = in_out + 'result.txt'
+print(in_out)
 
 if (flag == "new") :
     os.system("rm -rf " + in_out)
@@ -46,13 +48,13 @@ elif (flag == 'show') :
     os.system("echo Answer Got :")
     os.system("cat "+output_file)
     exit()
-else :
+elif flag != "" :
     print("Available flags are : new, add, show, edit")
     exit()
 
 
 if (os.path.isdir(in_out) == False) :
-    os.system('mkdir -p'+ in_out)
+    os.system('mkdir -p '+ in_out)
     print("Enter Input : (Press ctrl+d to Exit)")
     os.system("touch " + input_file)
     os.system("cat "+ '> '+ input_file)
