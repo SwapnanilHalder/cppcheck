@@ -6,16 +6,15 @@ INSTALLING :
 
 run these commands in your terminal:
 
-git clone https://github.com/SwapnanilHalder/cppcheck.git
-
-chmod a+x install.sh uninstall.sh
-
-./install.sh
-
+1. git clone https://github.com/SwapnanilHalder/cppcheck.git
+2. cd cppcheck
+3. chmod a+x install.sh uninstall.sh
+4. ./install.sh
 
 UNINSTALLING :
 
-./uninstall.sh
+1. cd cppcheck
+2. ./uninstall.sh
 
 
 Tl;dr
@@ -28,13 +27,13 @@ With flag => cppcheck <file_name.cpp> <one flag>
 
 Available flags are :
 
-new : restart the program, and provide fresh inputs, expected outputs
+## new : restart the program, and provide fresh inputs, expected outputs
 
-add : append new inputs and new results onto the previously supplied data
+## add : append new inputs and new results onto the previously supplied data
 
-edit : edit the inputs and results provided using nano text editor.
+## edit : edit the inputs and results provided using nano text editor.
 
-show : show the contents of input, expected results and output files.
+## show : show the contents of input, expected results and output files.
 
 
 Hi, this is Swapnanil. this script is installing a basic helper
