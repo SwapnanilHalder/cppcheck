@@ -3,7 +3,7 @@ import sys
 import subprocess
 import filecmp
 
-default_text_editor = "vim" # options : vim, vi, subl, code, nano
+default_text_editor = "nano" # options : vim, vi, subl, code, nano
 
 flag = ""
 if(len(sys.argv) == 3) :
@@ -69,30 +69,40 @@ os.system("g++ "+ path + ".cpp -o ~/bin/cpp/" + file_name+ "/"+file_name)
 print()
  
 os.system(in_out+file_name+'<'+input_file+'>'+output_file)
-result = filecmp.cmp(output_file, result_file, shallow=False)
-if(result == True) :
+
+correct = 1
+f1 = open(result_file, "r")
+f2 = open(output_file, "r")
+count_f1 = 0
+count_f2 = 0
+for _ in f1 :
+    if _ :
+        count_f1 += 1
+for _ in f2 : 
+    if _ :
+        count_f2 += 1
+
+i = 0
+for line1 in f1:
+    if line1 == "" :
+        continue
+    i += 1
+    for line2 in f2:
+        if line2 == "" :
+            continue
+        if line1 != line2 :
+            correct = 0
+            print("Line ", i, ":")
+            print("\tFile 1:", line1, end='')
+            print("\tFile 2:", line2, end='')
+f1.close()
+f2.close()
+if(correct == 1) :
     print("Correct!!")
 else :
     print("Wrong!!")
-    f1 = open(result_file, "r")
-    f2 = open(output_file, "r")
-    count_f1 = 0
-    count_f2 = 0
-    for _ in f1 :
-        count_f1 += 1
-    for _ in f2 : 
-        count_f2 += 1
-    if (count_f1 > count_f2) :
-        print("You are outputting less no. of lines than expected")
-    if (count_f1 < count_f2) :
-        print("You are outputting more no. of lines than expected")
-    i = 0
-    for line1 in f1:
-        i += 1
-        for line2 in f2:
-            if line1 != line2 :
-                print("Line ", i, ":")
-                print("\tFile 1:", line1, end='')
-                print("\tFile 2:", line2, end='')
-    f1.close()
-    f2.close()
+
+if (count_f1 > count_f2) :
+    print("You are outputting less no. of lines than expected")
+if (count_f1 < count_f2) :
+    print("You are outputting more no. of lines than expected")
