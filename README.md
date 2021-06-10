@@ -27,13 +27,10 @@ With flag => cppcheck <file_name.cpp> <one flag>
 
 Available flags are :
 
-## new : restart the program, and provide fresh inputs, expected outputs
-
-## add : append new inputs and new results onto the previously supplied data
-
-## edit : edit the inputs and results provided using nano text editor.
-
-## show : show the contents of input, expected results and output files.
+1. new : restart the program, and provide fresh inputs, expected outputs
+2. add : append new inputs and new results onto the previously supplied data
+3. edit : edit the inputs and results provided using nano text editor.
+4. show : show the contents of input, expected results and output files.
 
 
 Hi, this is Swapnanil. this script is installing a basic helper
