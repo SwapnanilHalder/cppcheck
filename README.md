@@ -1,5 +1,5 @@
 # cppcheck
-This is a project, which is created to automate checking a c++ code without entering all the inputs again and again, and check with the expected results. You once provide the inputs and expected correct results, then every time you run this program, it will compile it in a safe directory ~/bin/cpp// and run it on its own, create an input.txt, output.txt and result.txt file inside ~/bin/cpp/ and check it.  If the output.txt does not match with result.txt, it will say in which line it is differing.
+This is a project, which is created to automate checking a c++ code without entering all the inputs again and again, and check with the expected results. You once provide the inputs and expected correct results, then every time you run this program, it will compile it in a safe directory ~/bin/cpp/ and run it on its own, create an input.txt, output.txt and result.txt file inside ~/bin/cpp/ and check it.  If the output.txt does not match with result.txt, it will say in which line it is differing.
 
 
 INSTALLING :
